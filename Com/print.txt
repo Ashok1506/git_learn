@@ -4,5 +4,6 @@ public class print
 			Student std=new Student();
 			std.setId(20);
 			std.getId();
+			dfg;
 	}	
 }
