@@ -1,0 +1,10 @@
+String.	
+	A string is an array of characters.Howerver every character array is not a string.Because the character array should be terminated with null character the null character so that it will be considered as a string.
+	Every String is replaced with its base address.
+	printf("Hello\0hai");
+	only the hello printed here.
+	%s=>capable to print the char pointer and it will considering the first null character.
+	printf function is capable of taking n number of arguements.[var-args]
+	Taking the first argument within the double cots.
+	char s1[] ="Hello";
+	char *s2

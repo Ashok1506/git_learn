@@ -1,0 +1,477 @@
+Variable in java.
+	There are diff types of variables in java.
+		First memory allocation happens at the static declared variable.
+ex:
+import java.io.BufferedReader;//implicit import
+import java.util.*;//Explicit import
+public class hello
+{
+    static int age=10;
+    public static void main(String[] a)
+	{
+		int b=10;
+		System.out.print(b);
+		System.out.print(age);
+	}
+}
+		First the static function will work.
+ex:
+import java.io.BufferedReader;//implicit import
+import java.util.*;//Explicit import
+public class hello
+{
+    static int age=10;
+    static{System.out.print(age);}
+    public static void main(String[] a)
+	{
+		int b=10;
+		System.out.print(b);
+		System.out.print(age);
+	}
+}
+
+	1}Local variable 
+		Defined within a method,constructed or block.
+		Must be initialized before use.
+ex :
+public class hello
+{
+    static int age=10;
+    static{System.out.print(age);}
+    public static void main(String[] a)//local variable
+	{
+		int b=10;//local variable
+		System.out.print(b);
+		System.out.print(age);
+	}
+	2}class instance variable.
+		Belong to an instance of a class.
+		Each instance have it own copy of the variable.
+		Initialize with default value if not explicitly set.
+ex:
+ public static void main(String[] a)
+	{
+		int age=20;
+	}
+	3}Static variable.
+		Belong to the class rather then instances
+		Shared amoung all the instances of the class.
+		Initialize the default value if not explicitly set.
+ex:
+ public static void main(String[] a)
+	{
+		static int age=20;
+	}
+
+}
+		
+Data Types.
+	Two types
+		1}Primitive
+			Integer
+				short-16 bits-[-32768 to +32767]
+				byte-8 bits-[-128 to +128]
+				long-64 bits-[-2^64 to +2^64-1]
+				int-32 bits-[-2^32 to +2^32-1]
+			Float point
+				double-64 bits-[15 decimal digits]
+				float-32 bits-[6to7 decimal digits]
+			Character
+				char-16 bits-[0-65535]
+			Boolenan
+				boolean-1 bit-[0-1]
+		2}Non primitive[User defined]
+			String
+			Array
+			Class
+			ext
+	scanner-takes constant input.
+	buffer reader-infinitr input.
+ex:
+import java.util.Scanner;
+public class hello
+{
+    public static void main(String[] a)
+	{
+		Scanner inputReader =new Scanner(System.in);
+		System.out.print("Enter name: ");
+		String name=inputReader.next();
+		System.out.print("Enter Age: ");
+		Integer age=inputReader.nextInt();
+		System.out.println(name +"\t"+age);
+		inputReader.close();
+	}
+}
+	
+Operators.
+	unary Operator
+	Arithmetic operator-[+,-,%,*,/]
+	Relational Operator-
+	Logical Operator-[and,or,exor]
+	Bitwise Operator-[~and,~or,~exor]
+	Assignment Operator-[=]
+	Shift Operator-[<<,>>]
+	Ternary Operator-[?,:]	
+
+Control Statement.
+	Selective Statements
+		if
+			simple if
+			if-else
+			nested if
+			if-else-if
+		switch statement
+			swithch
+	Iterative Staements
+		while
+		do-while
+		for
+		for-each
+	Jumping Statements
+		break
+		continue
+		return
+
+m=7am,t=6am,w=71m,t=7am,f-5am,s-9am,s-am
+functions in java.
+
+import java.util.Scanner;
+public class hello
+{
+	private static Integer x = 10;
+	private static Integer y = 20;
+	
+	private static Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args)
+	{		
+		Integer choice = null;
+		do
+		{
+			showMenu();
+			System.out.print("enter your choice:");
+			choice = scanner.nextInt();
+			operations(choice);
+		}while(true);			
+	}
+	
+	private static void showMenu(){
+		System.out.println("\n1.Add\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulo Division\n6.Exit");		
+	}
+	
+	private static void readInput()
+	{
+		System.out.print("enter x:");
+		x = scanner.nextInt();
+		System.out.print("enter y:");
+		y = scanner.nextInt();		
+	}
+	
+	private static void operations(Integer choice)
+	{
+		switch(choice){
+			case 1 : readInput();System.out.print("Add : " + (x+y));break;
+			case 2 : readInput();System.out.print("Sub : " + (x-y));break;
+			case 3 : readInput();System.out.print("Multiply : "+ (x*y));break;
+			case 4 : readInput();System.out.print("Division");break;
+			case 5 : readInput();System.out.print("Modulo");break;
+			case 6 : System.exit(0);
+			default : System.out.print("Invalid choice");break;
+		}
+	}
+}
+
+Strings in java.
+	1}String-It is a class[wrapper class] and not a datatype.
+	2}StringBuilder
+	3}StringBuffer
+
+1]String 
+	Initialize
+		String name="abs"
+		String name=new String("abs")
+	Predefined method in string
+		name.length-[return the length of the string.]
+		name.concat("def");-[concatenate]
+		name.contains("abs");-[whether the substring is present or not]
+		name.charAt(index)-[find the character]
+		name.toLowerCase()-[to convert the whole word to lower]
+		name.toUpperCase()-[to convert thr whole word to upper]
+		name.substring(start,end)-[to find the substring]
+		name.trim()-[remove the space in beg and end]
+		name==name1-[check the memory address and the value]
+		name.equals(name2)-[check the only value of the string with case sensitive]
+		name.replace(tobechanged,goingtochange)-[change the char in sting]
+		name.equalsIgnoreCase(name2)-[checke th value without case sensitive]
+
+Write a java programe to read a string and replace all vowel character with dollar.
+import java.util.Scanner;
+public class operation
+{
+
+	public static void main(String[] args)
+	{		
+		Scanner sc=new Scanner(System.in);
+		String name;
+		name=sc.next();
+		for(int i=0;i<name.length();i++){
+			if("aeiou".contains(name.charAt(i))){
+				name.replace(name.charAt(i),'$');
+		}
+	}
+		System.out.print(name);
+
+	}
+}
+StringBuffer.
+	1}mutable
+	2}moderate performance.
+	3}Syncronozation.
+	
+	Methods in StringBuffer.
+		Same as String.
+		name.append("ashok");
+		name.tostring();
+		name.insert(index,"string")-[to insert]
+		name.delete(start,end)-[delete from start to end]
+		name.deleteCharAt(index)-[delete the char in string]
+		name.replace(start,end,"string")-[replace the substring]
+		name.reverse()-[to reverse the entire string] 
+		name.charAt(index)-[return char]
+		name.setCharAt(2,"string")-[to change the character]
+		name.substring(start,end)-[to print the substring]
+StringBuilder
+	1}mutable
+	2}Very high performance
+ 	Method in StrinBuilder.
+		same as stringBuffer.
+Array in java.
+	Declaring in arr.
+		int[] num;
+		num=new int[n];
+
+		int[] num=new int[5];
+		
+	Iniatialize in arr.
+		mum[i]=value;
+		num={10,20,30};
+	In java array is an dataStructure that allows to store multiple values of the same type under the single object name.
+	Each element in an array is accessed by the index,which start from 0.
+	
+	Predefined functions.
+		Arrays.sort(arr name)-[sorting the arr]
+		Arrays.binarySearch(arr name,number)-[binary search in arr]
+		Arrays.fill(arr name,number)-[to fill number in arr]
+		Arrays.equals(arr1,arr2);-[to check the two arr equals]
+		arrname.length-[to find the length of the arr]
+		Arrays.toString(arrname)-[to convert arr to string]
+Muldidimentional array.
+	Declaring an array.
+
+Packages in java.
+	1}predefined packages.
+	2}user defined.
+		1]java.util
+		2]java.lang
+		3]java.
+Interface in java.
+	collection abstract class.
+	In java multiple inheritance is implemented using interface.
+Exception Handling in java.
+	try{
+		Statement
+	    }
+	catch(exception obj){
+		system.out.print("msg");
+		system.out.print(obj.getCause);
+		system.out.print(obj.getMessage());
+		obj.printStackTrace;
+		}
+Exception is an unwanted,unexpected even the disturb the normal flow of programme.
+	Types in exception.
+		ArithmeticException.
+		ArrayIndexOutOfBoundsExpection.
+Default exception handling in java.
+	In programme if any exception is raise,the method in which it is raised is responsible to create exception object by including the following information.
+	1}Name of the exception.
+	2}Description.
+	3}Location.
+	4}After creating the exception object the method handover the object to the jvm.
+	5}the jvm will check the corresponding method having any exception handling code or not.
+	6}if the method have the any exception handling code then the exception handling part of the code will be executed otherwise jvm terminate the method abnormally and remove it from the stack.
+jvm identifies column method.its the column method does not contain exception handling then jvm terminates column method and removes corresponding entry from the stack.
+	this process will continue untill main method is reached if the main  method doesn't implement exception handling then jvm terminates the main method and removes entry from the corresponding stack then jvm handovers exception object to the default exception handler which is a part of jvm
+	default exception handler the exception message to the console and terminates program ubnormally
+Exception Handling:
+	Throwable class acts as root for exception hierarchy.
+	Throwable class contains two chained classes:
+		1}Exception
+		2}Errors-Try,Catch,Finally
+Constructor in java:
+	In constructor,the class name should be same as the method
+	constructors can be overloaded
+	constructors dont hava a return type
+	constructors can have access modifiers
+If a constructor does not explicitly invoke a super class constructor the compiler will insert a call to the default constructor of the superclass.you can use this method to invoke another constructor within the same class and super() method to invoke a constructor in the super class and this process is called Constructor chaining.
+
+Class
+	A class is a template that define structure and behavior of objects and object is an instance of the class.
+Data abstraction.
+	It hides the method which is the original method and show the abstract or.Abstraction can be achieved using either interface or from abstract class.	1}Abstraction using interface.
+Write a java programme to implement an atm machine.
+	1}pin change
+	2}withdraw
+	3}Balance
+	4}Exit
+abstract class                       		Interface
+	1]abstract class				1]Interface
+	 2]provides 				1]declare a class for implement	
+
+Inner class
+	In java inner class is a class defined in a class.Inner classes has the access to the member in the outer class.And they can be used to logically group class and improve encapsulation.
+	1]Types of inner class
+		1}Member inner class.
+		2]defined at member level of a class 
+		3]defined within a block of code like method.
+		4]Anonymous inner class
+		5]Static method class.
+			A static class is defined within another class.
+Use class implementing en capsulation
+	1]access to outer class member 
+	2]implementation of listener class.
+	3]Iterator implementation
+
+implementation of Thread.
+	1}Runnable interface
+		public class threadcl implements Runnable{
+		public void run
+		() {
+			for(int i=0;i<10;i++) {
+				System.out.println(i);
+			}
+		}
+}
+		
+public class Main {
+	public static void main(String[] args) {
+		threadcl t1=new threadcl();
+		Thread obj =new Thread(t1);
+		obj.start();
+		for(int i=0;i<10;i++) {
+			System.out.println("main"+i);
+		}
+		
+	}
+}
+
+	2}Thread abstract class.
+		public class Main
+{
+	public static void main(String[] args) {
+		threadcl t1=new threadcl();
+		t1.start();
+		for(int i=0;i<10;i++) {
+			System.out.println("main"+i);
+		}
+	}
+}
+		
+public class threadcl extends Thread{
+
+		public void run
+		() {
+			for(int i=0;i<10;i++) {
+				System.out.println(i);
+			}
+		}
+}
+
+In java the thread schedular is responsible for determinning which thread should run and for how long.And it is the part of jvm and it is responsible for managing the execution for multiple threads.The schedular determine the order in which threads are executed in thread priority and the scheduling algorithm used for .
+
+Collection
+	Collection in java framework as a single entity.
+collection information
+	collection interface is considered as root interface
+collection interface
+	it defines the most general methods which are applicable for collection objects.
+	collection doesnt have concrete class.
+		
+Method in collection.
+	void add(index i,object o);
+	boolean add(Object o);
+	boolean addAll(Collection c);
+	boolean remove(Object o);
+	boolean removeAll(Collection c);
+	bollean retainAll(Collection);
+	void clear();
+	boolean contains(Object o);
+	boolean containsAll(Collection c);
+	boolean isEmpty();
+	int size();
+	object[] toArray();
+	Iterator iterator();
+List Interface-allow duplicates and stored in an ordered way.
+	ArrayList[class]-
+	Vector[class]-
+	LinkedListp[class]-
+	
+	List interface -It is an interface in java which represents ordered collection of elements.
+			List implemets collection interface.
+			It provides several methods to manage and manipulate ordered sequence of elements.
+			Indexed access
+			Dynamic size
+ArrayList
+	An arraylist is an dynamic array that provides resizable array.
+	The underlined data structures for your arr is resizable or groupable array.
+	It implents list interface allowing to store and manipulate elements dynamically.
+	Insertion order will be preserved. 
+	Heterogenous objects are allowed,except treeset and tree map.
+
+Constructor of ArrayList
+	List<Integer> marklist=new ArrayList();
+	ArrayList<Integer> marks=new ArrayList();
+		The above code creats an empty list object with initial 
+		If the arraylist reaches the maximum capacity a ArrayList object will be created with in new memory.
+	new capacity=capacity*3/2+1;
+Stack
+	It is the datastructure it follows lifo principle stack operation 
+		Push 
+		
+
+Map Interface.
+	It is an interface,it implements collection of key value pair.where each key is unique and maps to a corresponding value.
+		Methods.
+			boolean put(key,value)
+			collection get(key)
+			boolean containskey(key)
+			boolean remove(key);		
+			Collection keyset()
+			Collection entryset();
+			Collection value();
+	
+
+	
+			
+
+	
+
+	
+
+	
+	
+
+			
+		
+
+	
+	
+
+
+
+
+		
+		
+		
+
+
+	
